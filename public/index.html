@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automation Todo List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚀 Automation Todo List</h1>
+      <p>Create tasks and automate your daily processes with one click</p>
+    </header>
+
+    <main>
+      <!-- Task Creation Form -->
+      <section class="form-section">
+        <h2>Create New Task</h2>
+        <form id="taskForm">
+          <div class="form-group">
+            <label for="taskName">Task Name *</label>
+            <input type="text" id="taskName" placeholder="e.g., Generate Excel Report" required>
+          </div>
+
+          <div class="form-group">
+            <label for="taskDesc">Description</label>
+            <textarea id="taskDesc" placeholder="What does this task do?" rows="2"></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="commandType">Command Type *</label>
+              <select id="commandType" required>
+                <option value="">Select type...</option>
+                <option value="application">Application (Open exe/bat)</option>
+                <option value="powershell">PowerShell Script</option>
+                <option value="batch">Batch Script</option>
+                <option value="python">Python Script</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="command">Command/Path *</label>
+              <input type="text" id="command" placeholder="e.g., C:\Task\Script\xxx.bat" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+      </section>
+
+      <!-- Tasks List -->
+      <section class="tasks-section">
+        <h2>Your Tasks</h2>
+        <div id="tasksList" class="tasks-list">
+          <p class="empty-state">No tasks yet. Create one above!</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal for editing tasks -->
+  <div id="editModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Task</h2>
+      <form id="editForm">
+        <div class="form-group">
+          <label for="editTaskName">Task Name *</label>
+          <input type="text" id="editTaskName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="editTaskDesc">Description</label>
+          <textarea id="editTaskDesc" rows="2"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="editCommandType">Command Type *</label>
+            <select id="editCommandType" required>
+              <option value="application">Application (Open exe/bat)</option>
+              <option value="powershell">PowerShell Script</option>
+              <option value="batch">Batch Script</option>
+              <option value="python">Python Script</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="editCommand">Command/Path *</label>
+            <input type="text" id="editCommand" required>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
