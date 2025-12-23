@@ -83,11 +83,6 @@ The application will start on `http://localhost:3000`
 
 ## Examples
 
-### Example 1: Launch Uma Musume Game
-- **Name**: Uma Musume Dailies
-- **Command Type**: Application
-- **Command**: `C:\Games\UmaMumusume\umamusume.exe`
-
 ### Example 2: Run a Python Script
 - **Name**: Daily Report Generator
 - **Command Type**: Python
